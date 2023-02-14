@@ -171,6 +171,22 @@ The Debug Toolbar provides detailed information about the time and resources use
 
 * Make sure that the toolbar is not running on production as Django Debug Toolbar will increase the latency of your API calls
 
+### Commenting your code in Django
+
+* Be concise: Write comments that are concise and to the point. Avoid lengthy comments that are difficult to read and understand.
+
+* Explain why, not what: Explain the reasoning behind a particular code block or decision, rather than just describing what the code is doing. This can help other developers understand the intent of the code.
+
+* Use clear language: Use clear and concise language in your comments. Avoid using jargon or overly technical terms that may be confusing to other developers.
+
+* Update comments as code changes: Make sure to update comments as the code changes. Outdated comments can be misleading and confusing to other developers.
+
+* Use meaningful names: Use meaningful names for variables, functions, and classes, which can help make comments more effective by providing context for the code.
+
+* Comment sparingly: Only comment when necessary. Avoid over-commenting code, which can make it more difficult to read and understand.
+
+* Use docstrings: Use docstrings to document functions and methods. Docstrings are a more formal way of documenting code, and they can be parsed by tools like Sphinx to generate documentation.
+
 ## GitHub
 
 ### Basic Guideline
@@ -188,3 +204,37 @@ The Debug Toolbar provides detailed information about the time and resources use
 * Deploy changes to production: Once the changes have been reviewed and approved, merge into the master branch and deploy the changes to the production environment.
 
 * Monitor changes in production: After changes have been deployed to production, monitor the system to ensure that everything is working as expected. If any issues are found, they should be addressed as quickly as possible to minimize any negative impact on the end-users.
+
+### Feature Branches
+
+* Create a new feature branch: When starting work on a new feature or bug fix, create a new feature branch from the main branch (e.g., master, main). Name the branch after the feature or bug, using a short but descriptive name.
+
+* Make changes in the feature branch: Work on the feature or bug in the feature branch. This keeps the main branch clean and allows multiple developers to work on different features at the same time.
+
+* Keep the branch up-to-date: Regularly pull changes from the main branch into the feature branch to keep it up-to-date with the latest changes. This helps prevent conflicts when merging the feature branch back into the main branch.
+
+* Commit frequently: Make frequent, small commits to the feature branch as you make changes. This makes it easier to track changes and roll back changes if necessary.
+
+* Test changes in the feature branch: Test the changes in the feature branch to ensure that they work as expected and do not introduce new issues.
+
+* Review code changes: Before merging the feature branch back into the main branch, have another team member review the code changes. This helps catch any potential issues and ensures that the changes meet the project's coding standards.
+
+* Merge the feature branch back into the main branch: Once the changes have been reviewed and approved, merge the feature branch back into the main branch. Resolve any conflicts that arise during the merge process.
+
+* Delete the feature branch: After the feature branch has been merged back into the main branch, delete the feature branch. This keeps the repository clean and prevents confusion when working on future features.
+
+### Rollback Commit
+
+* Identify the commit to be rolled back: Use the Git log command to find the hash of the commit that needs to be rolled back. For example, if the commit message was "Fixed bug in login feature", you could use the command "git log --grep='Fixed bug in login feature'" to find the commit hash.
+
+* Create a new branch: Create a new branch from the commit that you want to roll back to. This ensures that you can easily revert back to the previous state if necessary.
+
+* Roll back the commit: Use the Git revert command to roll back the commit. This creates a new commit that undoes the changes made by the original commit. For example, if the commit hash is "a1b2c3d", you could use the command "git revert a1b2c3d" to revert the commit.
+
+* Review the changes: Review the changes made by the reverted commit to ensure that they are correct and did not introduce any new issues.
+
+* Test the changes: Test the changes to ensure that they work as expected and do not introduce any new issues.
+
+* Merge the changes: Once the changes have been reviewed and tested, merge the changes back into the main branch.
+
+* Delete the temporary branch: After the changes have been merged, delete the temporary branch that was created in step 2.
